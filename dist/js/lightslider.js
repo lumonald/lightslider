@@ -357,8 +357,13 @@
                             }
                         }
                         var thumb = $children.eq(i * settings.slideMove).attr('data-thumb');
+                        var post_title = $children.eq(i * settings.slideMove).attr('data-title');
+                        var post_date = $children.eq(i * settings.slideMove).attr('data-date');
+                        var post_tag = $children.eq(i * settings.slideMove).attr('data-tag');
+                        var post_tag_bg = $children.eq(i * settings.slideMove).attr('data-tag-bg');
+                        var post_tag_colour = $children.eq(i * settings.slideMove).attr('data-tag-colour');
                         if (settings.gallery === true) {
-                            pagers += '<li style="width:100%;' + property + ':' + thumbWidth + 'px;' + gutter + ':' + settings.thumbMargin + 'px"><a href="#"><img src="' + thumb + '" /></a></li>';
+                            pagers += '<li style="width:100%;' + property + ':' + thumbWidth + 'px;' + gutter + ':' + settings.thumbMargin + 'px"><a href="#"><img src="' + thumb + '" alt="' + post_title + '" style="width: 150px; float: right;" /><span class="post_title">' + post_title + '</span><span class="post_date">' + post_date + '</span><span class="post_tag" style="background-color: ' + post_tag_bg + '; color: ' + post_tag_colour + '">' + post_tag + '</span></a></li>';
                         } else {
                             pagers += '<li><a href="#">' + (i + 1) + '</a></li>';
                         }
